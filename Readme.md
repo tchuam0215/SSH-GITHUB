@@ -12,15 +12,15 @@ This repo is a test, on how to share your local git repo/project with github :
   409  cd C:\Users\tchua\Desktop\Python\SSH-Github
   410  git add . 
   411  git commit -m "First update"
-  412  git remote add origin git@github.com:tchuam0215/SSH-GITHUB.git
+  412  git remote add origin git@github.com:tchuam0215/SSH-GITHUB.git   # Add a remote repository to your local git repo, the remote git repo should already exist 
   413  git branch
   414  git branch --help
-  415  git push -u origin master
+  415  git push -u origin master # push change from your local repository to your remote repository
   416  cd #/.ssh
   417  cd ~/.ssh
   418  ssh-keygen -o -t rsa -C "ch.tchuenkam@gmail.com"
   419  cat id_rsa_ssh_github.pub
-  420  ssh -T git@github.com
+  420  ssh -T git@github.com # test the ssh key connection
   421  ls -al
   422  eval "$(ssh-agent -s)"
   423  ssh-add ~/.ssh/id_rsa_ssh_github
