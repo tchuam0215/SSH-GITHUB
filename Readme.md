@@ -24,9 +24,9 @@ This repo is a test, on how to share your local git repo/project with github :
   419  cat id_rsa_ssh_github.pub
   420  ssh -T git@github.com # test the ssh key connection
   421  ls -al
-  422  eval "$(ssh-agent -s)"
-  423  ssh-add ~/.ssh/id_rsa_ssh_github
-  424  ssh -T git@github.com
+  422  eval "$(ssh-agent -s)"  #1 run the ssh in the baskground first
+  423  ssh-add ~/.ssh/id_rsa_ssh_github #2 add the ssh key to that directory, make sure the public key of that sshkey is copied to github
+  424  ssh -T git@github.com #3 Then test your connection
   425  ls ~/.ssh/
   426  ssh -T GITHUB-tchuam0215@github.com
   427  ssh -T github-tchuam0215@github.com
@@ -42,3 +42,20 @@ This repo is a test, on how to share your local git repo/project with github :
   437  git status
   438  git branch
   439  git pull origin master
+
+
+  # Add ssh key to user 
+
+  You first list existing ssh key on your computer, if not create one.
+
+##1 Run the ssh in the baskground first 
+
+ -   eval "$(ssh-agent -s)" 
+
+##2 Add the ssh key to that directory, make sure the public key of that sshkey is copied to github
+
+ -  ssh-add ~/.ssh/id_rsa_ssh_github
+
+##3 Then test your connection
+
+ -   ssh -T git@github.com 
